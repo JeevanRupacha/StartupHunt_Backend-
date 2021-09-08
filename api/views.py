@@ -54,12 +54,16 @@ class ProductViewSet(viewsets.ModelViewSet):
         queryset = Product.objects.filter(~Q(launch_at__gt = datetime.utcnow()))
 
         ordering_query = self.request.query_params.get('m_order')
+        authorId = self.request.query_params.get('author')
         
         if ordering_query == "created_at":
             return queryset.order_by('-created_at')
 
         if ordering_query == "upvote":
             return queryset.order_by('-upvote')
+
+        if authorId is not None:
+            return queryset.filter(author = authorId)
 
         return queryset
 
