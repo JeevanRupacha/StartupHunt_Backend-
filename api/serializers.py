@@ -1,6 +1,4 @@
 from rest_framework import serializers
-# from auth_system.serializers import UserCreateSerializer
-# from auth_system.serializers import UserCreateSerializer
 
 from .models import(
     Product,
@@ -25,7 +23,7 @@ class ProductIconSerializer(serializers.ModelSerializer):
 class ProductCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductComment
-        fields = ["id", "product","author", "comment" ,"created_at"]
+        fields = ["id", "product","author", "comment" ,"created_at", "user"]
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
