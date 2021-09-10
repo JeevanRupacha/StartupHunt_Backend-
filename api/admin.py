@@ -34,7 +34,7 @@ class ProductImageAdmin(admin.ModelAdmin):
 
 @admin.register(ProductComment)
 class ProductCommentAdmin(admin.ModelAdmin):
-    list_display = ["id", "product","comment" ,"created_at"]
+    list_display = ["id", "product","author","comment" ,"created_at"]
     
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):

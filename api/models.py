@@ -118,7 +118,7 @@ class ProductComment(models.Model):
     any porduct .
     """
     product = models.ForeignKey(Product,related_name="product_comment", verbose_name=("product Id"), on_delete=models.CASCADE)
-    author = models.ForeignKey(User,related_name="product_comment", verbose_name=("author Id"), on_delete=models.CASCADE)
+    author = models.ForeignKey(User,blank=True, related_name="product_comment", verbose_name=("author Id"), on_delete=models.CASCADE, default="")
     comment = models.TextField(
         verbose_name = ("Comments text"),
         help_text =("Comment made to prouct "),

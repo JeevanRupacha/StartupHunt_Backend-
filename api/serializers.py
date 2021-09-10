@@ -25,7 +25,7 @@ class ProductIconSerializer(serializers.ModelSerializer):
 class ProductCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductComment
-        fields = ["id", "product","comment" ,"created_at"]
+        fields = ["id", "product","author", "comment" ,"created_at"]
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
