@@ -185,7 +185,7 @@ class ProductCommentViewSet(viewsets.ModelViewSet):
         """
         queryset = ProductComment.objects.all()
 
-        productId = self.request.filter('productID')
+        productId = self.request.query_params.get("productID")
         if productId is not None:
             queryset = queryset.filter(product = productId)
 
