@@ -48,6 +48,7 @@ class ProductSerializer(serializers.ModelSerializer):
             "tagline",
             "description",
             "upvote",
+            "product_link",
             "created_at", 
             "launch_at",
             "author",

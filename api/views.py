@@ -181,13 +181,13 @@ class ProductCommentViewSet(viewsets.ModelViewSet):
         """
         This method retruns the filtered list of data 
         Filtered according to the product Id 
-        eg . end point: /comments/productID = "ab34frfff@#dsf"
+        eg . end point: /comments/?productID=ab34frfff@#dsf
         """
         queryset = ProductComment.objects.all()
 
         productId = self.request.query_params.get("productID")
         if productId is not None:
-            queryset = queryset.filter(product = productId)
+            queryset = queryset.filter(product=productId)
 
         return queryset
     
